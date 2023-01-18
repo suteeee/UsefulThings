@@ -2,7 +2,26 @@
 
 ## 1. Recycler View Item Layout xml 생성
 - 생성할 때 background layout과 foreground layout이 필요하다.
-- ex) <FrameLayout> 안에 <ConstraintLayout> <ConstraintLayout> 두개가 match_parent, match_parent 형태로 겹쳐져 있는 상태
+<FrameLayout> 안에 <ConstraintLayout> <ConstraintLayout> 두개가 match_parent, match_parent 형태로 겹쳐져 있는 상태
+
+```
+<FrameLayout
+  android:id="@+id/parent_layout"
+  android:layout_width="match_parent"
+  android:layout_height="100dp"
+>
+  <ConstraintLayout
+    android:id="@+id/background_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  />
+  <ConstraintLayout
+    android:id="@+id/background_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  />
+</FrameLayout>
+```
 
 ## 2. Swipe Helper Callback 을 Override하는 클래스 생성
 - getView(recycierView: RecyclerView) 만 재정의 하면 된다.
