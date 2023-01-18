@@ -1,5 +1,3 @@
-package com.bigtech.basum.ui.custom
-
 import android.content.ClipData
 import android.graphics.Canvas
 import android.util.Log
@@ -132,13 +130,11 @@ abstract class SwipeHelperCallback: ItemTouchHelper.Callback() {
             previousPosition = null
 
             val x = getView(viewHolder).translationX
-            Log.d("list", "translationX : $x")
 
             CoroutineScope(Dispatchers.Main).launch {
                 for (i in getView(viewHolder).translationX.toInt() .. 0 step 4) {
                     delay(1)
                     getView(viewHolder).translationX = i.toFloat()
-                    Log.d("list", "translationX : ${ getView(viewHolder).translationX}")
                 }
             }
         }
