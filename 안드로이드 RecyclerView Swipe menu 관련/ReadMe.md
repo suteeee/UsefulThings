@@ -24,8 +24,13 @@
 ```
 
 ## 2. Swipe Helper Callback 을 Override하는 클래스 생성
-- getView(recycierView: RecyclerView) 만 재정의 하면 된다.
-- (recyclerview.adapter as [해당 어댑터 뷰홀더]).binding.foregroundLayout 을 리턴으로 주면 된다.
+- getView() 만 재정의 하면 된다.
+- 해당 아이템의 foreground layout view를 리턴으로 주면 된다.
+  ```
+  override fun getView(viewHolder: RecyclerView.ViewHolder) {
+    return (recyclerview.adapter as [해당 어댑터 뷰홀더]).binding.foregroundLayout
+  }
+  ```
 
 ## 3. Recycler View 있는곳으로 가서 Helper를 attach 하기
 - 2번에서 생성한 Helper 클래스 생성 후 setClamp() 사용해서 swipe시 멈출 구간 정해야 한다.
