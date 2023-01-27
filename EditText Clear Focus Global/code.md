@@ -1,6 +1,6 @@
 # EditText 바깥 아무데나 클릭시 Focus Clear
 
-## Activity의 dispatchTouchEvent를 override 하기
+- Activity의 dispatchTouchEvent를 override 하기
 
 ```
 override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
